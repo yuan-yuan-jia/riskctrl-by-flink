@@ -32,6 +32,9 @@
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.boot.version>2.6.11</spring.boot.version>
+        <fastjson2.version>2.0.12</fastjson2.version>
+        <flink.version>1.14.5</flink.version>
+        <scala.binary.version>2.11</scala.binary.version>
     </properties>
 
 
@@ -40,6 +43,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -56,6 +65,37 @@
                 <version>${spring.boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-streaming-java_${scala.binary.version}</artifactId>
+                <version>${flink.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!--Flink测试框架-->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-test-utils_${scala.binary.version}</artifactId>
+                <version>${flink.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- Flink测试框架一定要加上下面的依赖 -->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-streaming-java_${scala.binary.version}</artifactId>
+                <version>${flink.version}</version>
+                <scope>test</scope>
+                <classifier>tests</classifier>
+                <!--classifier将maven坐标变为四个 -->
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>${fastjson2.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
