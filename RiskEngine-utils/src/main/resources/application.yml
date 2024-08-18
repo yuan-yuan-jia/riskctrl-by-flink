@@ -1,0 +1,17 @@
+spring:
+  redis:
+    cluster:
+      nodes:
+        redis:7000,redis:7001,redis:7002,redis:7003,redis:7004
+    lettuce:
+      pool:
+        max-idle: 8
+        max-active: 8
+        min-idle: 2
+        max-wait: 1ms
+
+hbase:
+  conf:
+    confMaps:
+      'hbase.zookeeper.quorum' : 'zookeeper'
+      'hbase.zookeeper.property.clientPort' : '2181'

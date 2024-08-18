@@ -39,6 +39,9 @@
         <lombok.version>1.18.22</lombok.version>
         <log4j2.version>2.18.0</log4j2.version>
         <slf4j.version>2.0.0</slf4j.version>
+        <commons-pool2.version>2.11.1</commons-pool2.version>
+        <hbase.version>2.0.6</hbase.version>
+        <hadoop.verison>2.8.5</hadoop.verison>
     </properties>
 
 
@@ -133,6 +136,23 @@
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-slf4j-impl</artifactId>
                 <version>${log4j2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${commons-pool2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.hbase</groupId>
+                <artifactId>hbase-client</artifactId>
+                <version>${hbase.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-common</artifactId>
+                <version>${hadoop.verison}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

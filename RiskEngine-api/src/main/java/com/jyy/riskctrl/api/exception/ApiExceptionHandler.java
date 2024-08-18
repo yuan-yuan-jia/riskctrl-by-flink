@@ -13,6 +13,6 @@ public class ApiExceptionHandler {
     @ExceptionHandler(value = RedisException.class)
     public void RedisExceptionHandler(RedisException e) {
         //TODO
-        
+
     }
 }
