@@ -35,6 +35,8 @@
         <fastjson2.version>2.0.12</fastjson2.version>
         <flink.version>1.14.5</flink.version>
         <scala.binary.version>2.11</scala.binary.version>
+        <fastjson2-extension.version>2.0.12</fastjson2-extension.version>
+        <lombok.version>1.18.22</lombok.version>
     </properties>
 
 
@@ -96,6 +98,17 @@
                 <groupId>com.alibaba.fastjson2</groupId>
                 <artifactId>fastjson2</artifactId>
                 <version>${fastjson2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2-extension</artifactId>
+                <version>${fastjson2-extension.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
