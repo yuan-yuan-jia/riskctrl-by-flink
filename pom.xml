@@ -42,6 +42,9 @@
         <commons-pool2.version>2.11.1</commons-pool2.version>
         <hbase.version>2.0.6</hbase.version>
         <hadoop.verison>2.8.5</hadoop.verison>
+        <bahir.redis.connector.version>1.1.0</bahir.redis.connector.version>
+        <!--Jedis版本尽量和Apache-Bahir-Flink自带的Jedis版本一致 -->
+        <jedis.version>3.7.1</jedis.version>
     </properties>
 
 
@@ -153,6 +156,26 @@
                 <groupId>org.apache.hadoop</groupId>
                 <artifactId>hadoop-common</artifactId>
                 <version>${hadoop.verison}</version>
+            </dependency>
+
+            <!--Flink基础依赖 -->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-java</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            <!--Flink Connector(连接器) -->
+            <dependency>
+                <groupId>org.apache.bahir</groupId>
+                <artifactId>flink-connector-redis_${scala.binary.version}</artifactId>
+                <version>${bahir.redis.connector.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
